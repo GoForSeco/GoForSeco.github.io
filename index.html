@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brett Sabado — Construction Management, Austin TX</title>
+<meta name="description" content="Brett Sabado is a construction management professional in Austin, Texas, focused on commercial project delivery — project engineering, project controls, and field roles in the data center and industrial sectors.">
+<meta name="author" content="Brett Sabado">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Brett Sabado — Construction Management, Austin TX">
+<meta property="og:description" content="Commercial construction delivery in Central Texas. Project engineering, project controls, and field roles.">
+<meta property="og:url" content="https://brettsabado.com">
+
+<link rel="canonical" href="https://brettsabado.com">
+
+<!-- Structured data helps search engines associate this page with the name -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Brett Sabado",
+  "url": "https://brettsabado.com",
+  "jobTitle": "Construction Management Professional",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Brigham Young University"
+  }
+}
+</script>
+
+<style>
+  :root {
+    --ink: #10151c;
+    --ink-soft: #3a4657;
+    --paper: #f6f7f9;
+    --paper-line: #e2e6ec;
+    --blueprint: #1c3f66;
+    --blueprint-bright: #2f6db0;
+    --rule: #c9d1db;
+    --accent: #c56a2c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---- Header / spec callout ---- */
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding: 68px 0 34px;
+  }
+
+  .eyebrow {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blueprint);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 8vw, 62px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.02;
+    margin-bottom: 18px;
+  }
+
+  .lede {
+    font-size: clamp(18px, 3.2vw, 22px);
+    color: var(--ink-soft);
+    max-width: 58ch;
+  }
+
+  /* ---- Spec strip ---- */
+  .spec {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--rule);
+  }
+  .spec div {
+    padding: 22px 18px 22px 0;
+  }
+  .spec div + div {
+    padding-left: 18px;
+    border-left: 1px solid var(--rule);
+  }
+  .spec .k {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blueprint);
+    margin-bottom: 6px;
+  }
+  .spec .v {
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  /* ---- Sections ---- */
+  section { padding: 46px 0; border-bottom: 1px solid var(--rule); }
+
+  .sec-label {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blueprint);
+    margin-bottom: 22px;
+  }
+
+  section p { font-size: 17px; margin-bottom: 16px; max-width: 64ch; }
+  section p:last-child { margin-bottom: 0; }
+
+  .role {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+    border-top: 1px solid var(--paper-line);
+    flex-wrap: wrap;
+  }
+  .role:first-of-type { border-top: none; }
+  .role .title { font-size: 17px; font-weight: 700; }
+  .role .org { font-size: 15px; color: var(--ink-soft); }
+  .role .yr {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    color: var(--blueprint);
+    white-space: nowrap;
+  }
+
+  /* ---- Links ---- */
+  .links { display: flex; flex-wrap: wrap; gap: 14px; }
+  .links a {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    padding: 11px 18px;
+    transition: all 0.15s ease;
+  }
+  .links a:hover, .links a:focus {
+    border-color: var(--blueprint);
+    color: var(--blueprint);
+    outline: none;
+  }
+  .links a[aria-disabled="true"] {
+    color: #9aa4b0;
+    border-style: dashed;
+    pointer-events: none;
+  }
+
+  footer {
+    padding: 34px 0 60px;
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 560px) {
+    .spec { grid-template-columns: 1fr; }
+    .spec div + div { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; }
+    .spec div { padding-right: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">
+      <span>Construction Management</span>
+      <span>Austin, TX</span>
+    </div>
+    <h1>Brett Sabado</h1>
+    <p class="lede">I build and run the systems that keep complex projects on schedule, on budget, and defensible under scrutiny.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="spec">
+    <div>
+      <div class="k">Focus</div>
+      <div class="v">Commercial delivery — data center &amp; industrial</div>
+    </div>
+    <div>
+      <div class="k">Roles</div>
+      <div class="v">Project engineering, controls, field</div>
+    </div>
+    <div>
+      <div class="k">Market</div>
+      <div class="v">Central Texas</div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section>
+    <div class="sec-label">Background</div>
+    <p>My work pairs hands-on construction experience with a decade of operations leadership. As a Senior Project Engineer and BIM Manager at C.W. Driver, I worked on large-scale commercial projects — including a $300M+ facility and a $460M development — through the details that decide whether a project holds together.</p>
+    <p>As an owner-builder on two residential renovations, I've sat on the other side of the contract, managing budgets, schedules, and subcontractors directly. Between those, I spent six-plus years founding and running operations-intensive ventures — building the SOPs, compliance controls, and supply-chain systems that let small teams execute complex, regulated work at scale.</p>
+    <p>I recently completed my B.S. in Construction Management at BYU, and I'm focused on commercial construction delivery in the Austin market.</p>
+  </section>
+
+  <section>
+    <div class="sec-label">Selected Experience</div>
+    <div class="role">
+      <div>
+        <div class="title">Senior Project Engineer &amp; BIM Manager</div>
+        <div class="org">C.W. Driver Companies</div>
+      </div>
+      <div class="yr">2012–2014</div>
+    </div>
+    <div class="role">
+      <div>
+        <div class="title">Founder &amp; Operations Lead</div>
+        <div class="org">Self-employed</div>
+      </div>
+      <div class="yr">2015–2021</div>
+    </div>
+    <div class="role">
+      <div>
+        <div class="title">Owner-Builder</div>
+        <div class="org">Residential renovations — Draper UT, Atlanta GA</div>
+      </div>
+      <div class="yr">2019, 2021</div>
+    </div>
+    <div class="role">
+      <div>
+        <div class="title">B.S. Construction Management</div>
+        <div class="org">Brigham Young University</div>
+      </div>
+      <div class="yr">2024–2025</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-label">Elsewhere</div>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/brett-sabado-962aa446" target="_blank" rel="noopener">LinkedIn →</a>
+      <a href="#" aria-disabled="true">Writing — soon</a>
+      <a href="#" aria-disabled="true">Video — soon</a>
+    </div>
+  </section>
+
+</div>
+
+<div class="wrap">
+  <footer>
+    <span>Brett Sabado</span>
+    <span>Austin, Texas</span>
+  </footer>
+</div>
+
+</body>
+</html>
