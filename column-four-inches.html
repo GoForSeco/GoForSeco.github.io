@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What a Four-Inch Column Move Taught Me About BIM and AI — Brett Sabado</title>
+<meta name="description" content="On Qualcomm's Building Q, concrete was going in while we were still coordinating. How a five-story, 200,000-clash-per-floor BIM effort caught a structural impasse just in time — and why it points to AI in construction. By Brett Sabado.">
+<meta name="author" content="Brett Sabado">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="What a Four-Inch Column Move Taught Me About BIM and AI">
+<meta property="og:description" content="Concrete was going in while we were still coordinating. A war story from Qualcomm's Building Q about BIM coordination, an accelerated schedule, and where AI fits.">
+<meta property="og:url" content="https://brettsabado.com/column-four-inches.html">
+
+<link rel="canonical" href="https://brettsabado.com/column-four-inches.html">
+
+<!-- Structured data: article associated with the author -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What a Four-Inch Column Move Taught Me About BIM and AI",
+  "author": {
+    "@type": "Person",
+    "name": "Brett Sabado",
+    "url": "https://brettsabado.com"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Brett Sabado"
+  },
+  "mainEntityOfPage": "https://brettsabado.com/column-four-inches.html",
+  "about": ["BIM coordination", "construction management", "AI in construction"]
+}
+</script>
+
+<style>
+  :root {
+    --ink: #10151c;
+    --ink-soft: #3a4657;
+    --paper: #f6f7f9;
+    --paper-line: #e2e6ec;
+    --blueprint: #1c3f66;
+    --blueprint-bright: #2f6db0;
+    --rule: #c9d1db;
+    --accent: #c56a2c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---- Top nav ---- */
+  .topnav {
+    border-bottom: 1px solid var(--rule);
+    padding: 22px 0;
+  }
+  .topnav a {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--blueprint);
+  }
+  .topnav a:hover { color: var(--blueprint-bright); }
+
+  /* ---- Article header ---- */
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding: 54px 0 34px;
+  }
+
+  .eyebrow {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blueprint);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 6vw, 50px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  .byline {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  /* ---- Article body ---- */
+  article { padding: 42px 0 20px; }
+
+  article p {
+    font-size: 18px;
+    margin-bottom: 22px;
+    max-width: 66ch;
+  }
+
+  article p.opener {
+    font-size: 21px;
+    color: var(--ink);
+  }
+
+  .takeaway {
+    border-left: 3px solid var(--blueprint);
+    padding: 4px 0 4px 22px;
+    margin: 26px 0;
+  }
+  .takeaway .lead {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ---- Read-on-Medium callout ---- */
+  .callout {
+    border: 1px solid var(--rule);
+    padding: 24px 26px;
+    margin: 40px 0 10px;
+  }
+  .callout .k {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blueprint);
+    margin-bottom: 10px;
+  }
+  .callout a {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--blueprint);
+  }
+  .callout a:hover { color: var(--blueprint); }
+
+  /* ---- Footer ---- */
+  .backlink {
+    padding: 30px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .backlink a {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--blueprint);
+  }
+  .backlink a:hover { color: var(--blueprint-bright); }
+
+  footer {
+    padding: 24px 0 60px;
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div class="wrap">
+    <a href="/">← Brett Sabado</a>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">
+      <span>Field Notes</span>
+      <span>BIM &amp; Coordination</span>
+    </div>
+    <h1>What a Four-Inch Column Move Taught Me About BIM and AI</h1>
+    <div class="byline">Brett Sabado · Construction Management, Austin TX</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <article>
+    <p class="opener">Concrete was going in while we were still BIM coordinating.</p>
+
+    <p>That sentence shouldn't happen on a well-run job that finishes on time and under budget. But this wasn't a normal schedule. This was Qualcomm's Building Q — a $300M+ campus project with 585,000 SF of labs, cafes, offices, and auditoriums. I worked on it as a BIM Manager and Senior Project Engineer at C.W. Driver, from 2012 to 2014. The schedule had been accelerated to a 14-month build, and everyone was absolutely flying. Coordination and construction weren't happening in sequence anymore. They were happening at the same time, on the same structure, and we all knew it.</p>
+
+    <p>Here's the scale of what that meant. Because of the accelerated schedule, the construction drawings we were handed looked more like design drawings. The models for those drawings carried roughly 200,000 clashes per floor across a five-story structure. That's a staggering number to grind through in coordination — trade by trade, floor by floor. There's no clever software trick that makes a number like that go away. You just have to grind it. Six weeks of it.</p>
+
+    <p>And about six weeks in, on the last floor, we hit an impasse.</p>
+
+    <p>A structural column and a major MEP run could not coexist. We looked at it every way. The whole coordination team sat with it, and there was no route, no drop, no reroute that solved it without huge change orders or compromises to the design. The only solution left was the one nobody wants on a live pour: move the column.</p>
+
+    <p>So we got the architect into the trailer with us and put it in front of him directly. Everyone worked their own model at once until we converged on the best solution as fast as a room full of people can when the clock is a pump line. Four inches. That's what it came down to. Move the column four inches.</p>
+
+    <p>We ran out there and got the column moved in time.</p>
+
+    <p>I still think about what the change order would have been if we hadn't. The cost of catching it in the trailer versus discovering it in the field wasn't close. The change order and schedule ramifications would have been astronomical.</p>
+
+    <p>There are three ideas I carried out of that experience.</p>
+
+    <div class="takeaway">
+      <span class="lead">BIM coordination pays itself off, over and over.</span>
+      BIM caught what the field wouldn't have found until the building was well into rough installations.
+    </div>
+
+    <div class="takeaway">
+      <span class="lead">Design-build is the way to go.</span>
+      Although we weren't contractually a design-build project, the ability to function alongside the design team and subs like one made all the difference in resolving issues.
+    </div>
+
+    <div class="takeaway">
+      <span class="lead">Projects will keep speeding up.</span>
+      BIM coordination was vital to finishing this project on time with mitigated change orders. And I believe AI is going to completely revolutionize construction.
+    </div>
+
+    <p>That last point is what I want to focus on in future writing — but that's a longer story. I just wanted to start with a real one: a column, four inches, and BIM coordination.</p>
+
+    <div class="callout">
+      <div class="k">Also published on</div>
+      <a href="https://medium.com/@brettsabado/what-a-four-inch-column-move-taught-me-about-bim-and-ai-45b57f1196fa" target="_blank" rel="noopener">Read this piece on Medium →</a>
+    </div>
+  </article>
+
+  <div class="backlink">
+    <a href="/">← Back to Brett Sabado</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <footer>
+    <span>Brett Sabado</span>
+    <span>Austin, Texas</span>
+  </footer>
+</div>
+
+</body>
+</html>
