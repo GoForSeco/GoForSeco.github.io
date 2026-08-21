@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Company Deployed AI Takeoff Software. Why Is Everyone Still Measuring by Hand? — Brett Sabado</title>
+<meta name="description" content="Most AI takeoff tools fail estimators for one reason: they can't be trusted on a design development set. An estimator needs to know when a number is wrong — not just get it fast.">
+<meta name="author" content="Brett Sabado">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Your Company Deployed AI Takeoff Software. Why Is Everyone Still Measuring by Hand?">
+<meta property="og:description" content="Why most AI takeoff tools fail estimators — and what actually earns trust on a design development set.">
+<meta property="og:url" content="https://brettsabado.com/ai-takeoff-trust.html">
+
+<link rel="canonical" href="https://brettsabado.com/ai-takeoff-trust.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Your Company Deployed AI Takeoff Software. Why Is Everyone Still Measuring by Hand?",
+  "author": { "@type": "Person", "name": "Brett Sabado", "url": "https://brettsabado.com" },
+  "publisher": { "@type": "Person", "name": "Brett Sabado" },
+  "mainEntityOfPage": "https://brettsabado.com/ai-takeoff-trust.html"
+}
+</script>
+
+<style>
+  :root {
+    --ink: #10151c;
+    --ink-soft: #3a4657;
+    --paper: #f6f7f9;
+    --paper-line: #e2e6ec;
+    --blueprint: #1c3f66;
+    --rule: #c9d1db;
+    --accent: #c56a2c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---- Top bar ---- */
+  .topbar {
+    border-bottom: 2px solid var(--ink);
+    padding: 28px 0 22px;
+  }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  .topbar a {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--blueprint);
+  }
+  .topbar a:hover { text-decoration: underline; }
+  .topbar .name { font-weight: 700; color: var(--ink); font-family: Georgia, serif; font-size: 16px; letter-spacing: -0.01em; }
+
+  /* ---- Article head ---- */
+  .head { padding: 56px 0 30px; border-bottom: 1px solid var(--rule); }
+  .eyebrow {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blueprint);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(30px, 5.5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.08;
+    margin-bottom: 20px;
+  }
+  .byline {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+  }
+
+  /* ---- Article body ---- */
+  article { padding: 40px 0 20px; }
+  article p { font-size: 18px; margin-bottom: 22px; }
+  article p.lede { font-size: 21px; color: var(--ink-soft); line-height: 1.55; }
+  article em { font-style: italic; }
+  article .drop {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 34px 0 22px;
+    line-height: 1.4;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 40px 0 18px;
+  }
+
+  /* ---- Footer ---- */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 30px 0 60px;
+    margin-top: 30px;
+  }
+  .footlinks { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 24px; }
+  .footlinks a {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--rule);
+    padding: 11px 18px;
+    transition: all 0.15s ease;
+  }
+  .footlinks a:hover { border-color: var(--blueprint); color: var(--blueprint); }
+  .footmeta {
+    font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', Menlo, monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="/" class="name">Brett Sabado</a>
+    <a href="/">← Back</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="head">
+    <div class="eyebrow">Preconstruction · AI · Estimating</div>
+    <h1>Your Company Deployed AI Takeoff Software. Why Is Everyone Still Measuring by Hand?</h1>
+    <div class="byline">Brett Sabado</div>
+  </div>
+
+  <article>
+    <p class="lede">I spoke a while back with a colleague of mine who is an estimator at a large general contractor. He informed me that his company bought an AI takeoff platform and rolled it out company-wide. This GC is the real deal with a real budget and real training behind the rollout. Needless to say, the expectations were high.</p>
+
+    <p class="drop">He still does his takeoffs manually.</p>
+
+    <p>Let's clear a few things up first. He's not holding out and he didn't miss all of the training classes. In fact, he's one of the more technically capable people in that company. He's the kind of worker that puts in extra hours to really understand how things work. If anyone was going to make this new AI estimating tool work, it was him. However, after hours of frustration trying to make it work, he recently threw in the towel and went back to doing it by hand.</p>
+
+    <p class="drop">The issue isn't resistance to change either.</p>
+
+    <p>I think many people chalk this problem up to be the estimator's fault. Maybe you assume that estimators are all old school and slow to adopt. I just don't buy it. I've seen estimators with my own eyes willing to adopt anything they can just to slightly improve their numbers and their confidence in them. All of them have used multiple takeoff platforms. Many have even tried to crack the code by getting quantities from the model. Not to mention, all of them are black belts in Excel. In fact, I wouldn't be surprised if half of the players in the Microsoft Excel World Championship came from estimating departments around the world. The profession has never been shy about tools that work.</p>
+
+    <p class="drop">The issue is <em>trust</em>, and most AI takeoff products fail to instill trust.</p>
+
+    <p>An estimator's output isn't simply a number. It's a number they are willing to defend in a room where somebody is about to commit the company to a guaranteed maximum price contract. If they can't defend the number the software spits out, it's worthless to them. It doesn't matter how fast the AI gave it to them.</p>
+
+    <p>So, the question an estimator asks a new AI tool isn't just "is this accurate?" It's "when it's wrong, will I be able to know?" Most of these AI tools cannot answer that question. And if an estimator gets burned because of it, even just one time, they will never trust that program again. Let's talk about why AI platforms are struggling.</p>
+
+    <p class="drop">Most of these tools are at a disadvantage from the first measurement.</p>
+
+    <p>In order to create markups and quantities quickly, many tools change the plans over to pixels. This creates really fast takeoffs, but it dumbs down the drawings. Trained computer models are then used to make sense of those pixels, but on a DD set, they miss in a way that is hard to live with.</p>
+
+    <p class="drop">The markups for the quantities are never clean.</p>
+
+    <p>Most takeoff products demo beautifully on a complete, coordinated, permit-ready set with a model behind it. That is not what the plan sets look like in pre-construction.</p>
+
+    <p>What a GC prices is a design development set. These usually have sixty to a hundred plus sheets. They have revisions that are still landing. There is no model available and there are internal contradictions all over it. That's just the nature of DD drawings. DD isn't a broken CD set. It's a set that hasn't finished becoming one yet. Incompleteness isn't the edge case. It's the entire working condition.</p>
+
+    <p>Some DD sets have 3 different numbers for how many units are in the building. Sometimes the scale in the title block and the drawings don't agree. This is just par for the course and every estimator reading this has priced around a dozen of them this year without thinking twice.</p>
+
+    <p>An AI tool that treats these as noise to be smoothed over is actively dangerous. It will either create markups that are complete garbage, or it will give you a clean-looking number built on a contradiction. For this reason, the estimation community is struggling with what's out there.</p>
+
+    <h2>What's the Solution?</h2>
+
+    <p>Here is what I learned, the quantities are only half of the deliverables. It's the addition of back checking features, detail oriented questions back to the estimator, and the walkthrough of methods that bring confidence to the found quantities.</p>
+
+    <p>What defends a max price isn't a total. It's the total, next to a register of every assumption that produced it, next to a list of every place the drawings disagreed with themselves, next to a clear statement of what the system could not determine and is handing back to a human. That package is what survives a bid review. That package is what you use to level sub bids and catch scope change when the CDs land.</p>
+
+    <p>The hard problem is building a system that knows which of its own numbers not to trust. That's the part I care about. That's the part nobody's selling.</p>
+  </article>
+
+  <footer>
+    <div class="footlinks">
+      <a href="/">← All work</a>
+      <a href="https://medium.com/@brettsabado" target="_blank" rel="noopener">More writing →</a>
+      <a href="https://www.linkedin.com/in/brettsabado" target="_blank" rel="noopener">LinkedIn →</a>
+    </div>
+    <div class="footmeta">
+      <span>Brett Sabado</span>
+      <span>Austin, Texas</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
